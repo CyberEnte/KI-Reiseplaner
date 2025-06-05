@@ -1,0 +1,31 @@
+<section class="home">
+  <h1 class="title">Willkommen bei unserem Reiseplaner</h1>
+
+  <div v-if="offers.length" class="offers-section">
+    <h2 class="subtitle">Aktuelle Angebote</h2>
+    <div class="offer-grid">
+      <div
+        v-for="(offer, index) in offers"
+        :key="index"
+        class="offer-card"
+        @click="selectOption(offer)"
+      >
+        <img :src="offer.image" :alt="offer.title" class="offer-image" />
+        <div class="offer-info">
+          <h3 class="offer-title">{{ offer.title }}</h3>
+          <p class="offer-price">{{ offer.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div v-else v-if="!error" class="loading">
+    <div class="spinner"></div>
+    <p>Angebote werden geladen...</p>
+  </div>
+
+  <div v-if="error" class="error">
+    <p>{{ error.message || error }}</p>
+    <button class="retry-btn" @click="fetchOffers">Erneut Laden</button>
+  </div>
+</section>

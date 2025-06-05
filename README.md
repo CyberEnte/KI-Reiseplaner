@@ -1,29 +1,54 @@
-# KI-Reiseplaner
+# 🌍 KI-Reiseplaner
 
-This template should help get you started developing with Vue 3 in Vite.
+Dies ist das **KI-Reiseplaner**-Projekt, das das **Frontend** und das **Backend** als separate Workspaces enthält. Es ermöglicht, beide Teile der Anwendung gleichzeitig zu entwickeln und zu starten. Es beinhaltet ein Vergleichsportal sowie Überraschungsreisen. Darüber hinaus können exklusive und luxuriöse Reisen angeboten werden.
 
-## Recommended IDE Setup
+## 📁 Struktur
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+ki-reiseplaner/\
+├── frontend/ # Frontend-Projekt (Vue, Vite)\
+└── backend/ # Backend-Projekt (Node.js, Express)
 
-## Customize configuration
+## 📑 .env Beispiel
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+Sowohl im **Frontend** als auch im **Backend** benötigst du eine `.env`-Datei für Umgebungsvariablen. Beispiel:
 
-## Project Setup
+**Frontend**:
 
-```sh
-npm install
+```
+VITE_BACKEND_URL=http://localhost:3000
 ```
 
-### Compile and Hot-Reload for Development
+**Backend**:
 
-```sh
+```
+FRONTEND_URL=http://localhost:5173
+
+GEMINI_API_KEY=YOUR_GEMINI_KEY
+OPENAI_API_KEY=YOUR_OPENAI_KEY
+```
+
+## 🚀 Entwicklung starten
+
+Um sowohl das **Frontend** als auch das **Backend** gleichzeitig zu starten, verwende den folgenden Befehl:
+
+```bash
 npm run dev
 ```
 
-### Compile and Minify for Production
+Dies wird sowohl den Vite-Entwicklungsserver für das Frontend als auch den Express-Server für das Backend gleichzeitig starten.
 
-```sh
-npm run build
-```
+### Einzelne Teile starten
+
+Falls du nur das **Frontend** oder nur das **Backend** starten möchtest, kannst du auch diese spezifischen Befehle verwenden:
+
+- **Frontend**:
+
+  ```bash
+  npm run dev:frontend
+  ```
+
+- **Backend**:
+
+  ```bash
+  npm run dev:backend
+  ```
