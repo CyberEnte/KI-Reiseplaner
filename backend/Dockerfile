@@ -2,6 +2,9 @@ FROM node:20-alpine
 
 WORKDIR /app
 
+args: ['build', '-f', 'app/Dockerfile', '-t', 'gcr.io/$PROJECT_ID/my-image', 'app']
+
+
 # Puppeteer
 RUN apk add \
     chromium \
